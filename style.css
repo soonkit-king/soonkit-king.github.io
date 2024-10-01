@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "main-font";
+    src: url("fonts/AfacadFlux-VariableFont_slnt\,wght.ttf");
+}
+
+@keyframes drop {
+    0% {height: 0;}
+    10% {height: 80vh;}
+    40% {height: 80vh;}
+    50% {height: 80vh;}
+    65% {height: 0;}
+}
+
+@keyframes bounce {
+    0% {top: 0;}
+    10% {top: 5vh;}
+    40% {top: 2vh;}
+    50% {top: 5vh;}
+    65% {top: -30vh;}
+}
+
+@keyframes rise {
+    0% {height: 0vh;}
+    10% {height: 40vh;}
+    20% {height: 25vh;}
+    50% {height: 40vh;}
+    65% {height: 0vh; }
+}
+
+
+
+:root {
+    --safe-width: 30rem;
+}
+
+html, body {
+    font-family: "main-font";
+    margin: 0;
+    padding: 0;
+    background-color: rgb(205, 205, 205);
+}
+/* Safe area container */
+.safe-area {
+    width: var(--safe-width);
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    background-color: white;
+    overflow: scroll;
+    flex-grow: 1;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    align-content: center;
+    min-height: 100vh;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-200%);
+    transition: all 2.4s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.launcher {
+    position: relative;
+    background-color: wheat;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}
+
+.launcher .upper-half {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 70vh;
+    background-color: burlywood;
+    animation: rop 4s .5s;
+
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+}
+
+.launcher .circle {
+    position: absolute;
+    top: 5em;
+    width: 10em;
+    height: 10em;
+    background-color: khaki;
+    background-image: url('img/her/nasa-selfie-c.jpg');
+    background-size:contain;
+    background-position: center;
+    border: 4px black;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: boune 4s .5s;
+}
+
+.launcher .lower-half {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: brown;
+    animation: rise 4s .5s;
+}
