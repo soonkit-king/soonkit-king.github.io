@@ -35,22 +35,22 @@
 
 html, body {
     font-family: "main-font";
+    background-color: rgb(205, 205, 205);
     margin: 0;
     padding: 0;
-    background-color: rgb(205, 205, 205);
 }
+
 /* Safe area container */
 .safe-area {
     width: var(--safe-width);
     height: 100%;
+    padding: 0;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: start;
     flex-direction: column;
     background-color: white;
-    overflow: scroll;
-    flex-grow: 1;
 }
 
 section {
@@ -58,13 +58,16 @@ section {
     place-items: center;
     align-content: center;
     min-height: 100vh;
+    min-width: none;
+    background-color: whitesmoke;
+    color: black;
 }
 
 .hidden {
-    opacity: 0;
+    opacity: 1;
     filter: blur(5px);
     transform: translateX(-200%);
-    transition: all 2.4s;
+    transition: all 1.4s;
 }
 
 .show {
