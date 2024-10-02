@@ -46,6 +46,8 @@ html, body {
 
 h1 {
     font-size: 2.5rem;
+    margin: 10px ;
+    display: inline-block;
 }
 
 h2 {
@@ -68,10 +70,28 @@ section {
     color: black;
 }
 
+
+.textFromTopLeft {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+
+img.point-down  {
+    width: 110px;   /* Sets the width of the image */
+    height: auto;   /* Keeps the aspect ratio */
+    max-width: 100%;
+    margin-top: 100px;
+}
+
 .center {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .container {
