@@ -71,20 +71,22 @@ section {
 }
 
 
-.textFromTopLeft {
+.textbox {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
+    margin: 0 110px;
 }
 
-
 img.point-down  {
+    position: relative;
     width: 110px;   /* Sets the width of the image */
     height: auto;   /* Keeps the aspect ratio */
     max-width: 100%;
-    margin-top: 100px;
+    margin: 110px auto 0 auto;
+    background-position: center;
 }
 
 .center {
@@ -94,31 +96,85 @@ img.point-down  {
     flex-direction: column;
 }
 
-.container {
-    overflow: w;
-}
+
 
 .hidden {
     opacity: 0;
-    transition: all 1s;
+    transition: all 1.5s;
 }
 
 .hidden.fromLeft {
+    opacity: 0;
     filter: blur(5px);
-    transform: translateX(-200%);
+    transform: translateX(-110%);
+    transition: all 1.2s;
+}
+
+.hidden.initial:nth-child(1) {
+    transition-delay: .5s;
+}
+
+.hidden.initial:nth-child(2) {
+    transition-delay: 2s;
+}
+
+.hidden.initial:nth-child(3) {
+    transition-delay: 3s;
 }
 
 .show {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+    opacity: 1 !important;
+    filter: blur(0) !important;
+    transform: translateX(0) !important;
+}
+
+.suprise {
+    display: flex;
+}
+
+.circle-portrait {
+    position: relative;
+    width: 12em;
+    height: 12em;
+    background-color: khaki;
+    background-image: url('img/her/nasa-selfie-c.jpg');
+    background-size: contain;
+    background-position: center;
+    border: 1px grey solid;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 
 
+.confetti-btn {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    outline: none;
+}
 
+/* Button tap animation effect */
+.confetti-btn:active {
+    transform: scale(0.95);
+    background-color: #ff5c5c;
+}
 
-
+/* Canvas for confetti animation */
+#confettiCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
 
 
 
@@ -153,25 +209,8 @@ img.point-down  {
     display: flex;
     align-items: start;
     justify-content: center;
-
 }
 
-.launcher .circle {
-    position: absolute;
-    top: 5em;
-    width: 10em;
-    height: 10em;
-    background-color: khaki;
-    background-image: url('img/her/nasa-selfie-c.jpg');
-    background-size:contain;
-    background-position: center;
-    border: 4px black;
-    border-style: solid;
-    border-width: 5px;
-    border-radius: 50%;
-    overflow: hidden;
-    animation: boune 4s .5s;
-}
 
 .launcher .lower-half {
     position: absolute;

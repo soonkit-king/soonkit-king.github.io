@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday :)</title>
+    <title>A Special Day</title>
 
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -11,18 +11,23 @@
 <body>
     <div class="safe-area">
         <section class="center">
-            <div class="textFromTopLeft">
-                <h1 class="hidden" style="transition-delay: .5s;">Hey.</h1>
-                <h1 class="hidden" style="transition-delay: 2s;">It’s me again :P</h1>      
+            <div class="textbox">
+                <h1 class="hidden initial">Hey.</h1>
+                <h1 class="hidden initial">It's me again :P</h1> 
+                <img class="hidden initial point-down" src="/img/down.png">  
             </div>
-            <h1 class="hidden" style="transition-delay: 3s;">
-                <img class="point-down" src="/img/down.png">
-            </h1>  
         </section>
         <section class="center">
-            <div class="container">
-                <h1 class="hidden mLeft">but look who's Birthday is it today! :D</h1>
+            <div class="textbox">
+                <h1 class="hidden fromLeft" style="margin-bottom: 0;">Look who's Birthday it is</h1>
+                <h1 class="hidden fromLeft" style="margin-top: 0;">today!!</h1>
             </div>
+            <div class="surprise">
+                <div class="circle-portrait"></div>
+                <img src="img/tada.png">
+                <button id="confettiButton" class="confetti-btn">Tap me</button>
+            </div>
+            <canvas id="confettiCanvas"></canvas>
         </section>
     </div>
         <!-- <section>
