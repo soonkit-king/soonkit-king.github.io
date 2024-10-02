@@ -48,6 +48,10 @@ h1 {
     font-size: 2.5rem;
 }
 
+h2 {
+    font-size: 2rem;
+}
+
 body .safe-area {
     position: relative;
     background-color: white;
@@ -64,11 +68,24 @@ section {
     color: black;
 }
 
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    overflow: w;
+}
+
 .hidden {
     opacity: 0;
+    transition: all 1s;
+}
+
+.hidden.fromLeft {
     filter: blur(5px);
     transform: translateX(-200%);
-    transition: all 1s;
 }
 
 .show {
