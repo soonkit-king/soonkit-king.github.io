@@ -38,36 +38,37 @@ html, body {
     background-color: rgb(205, 205, 205);
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
 }
 
-/* Safe area container */
-.safe-area {
-    width: var(--safe-width);
-    height: 100%;
-    padding: 0;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
+h1 {
+    font-size: 2.5rem;
+}
+
+
+
+body .safe-area {
+    position: relative;
     background-color: white;
+    width: 120vh;
+    min-height: 100%;
+    max-height: 100%;
 }
 
 section {
-    display: grid;
-    place-items: center;
-    align-content: center;
     min-height: 100vh;
-    min-width: none;
     background-color: whitesmoke;
     color: black;
 }
 
 .hidden {
-    opacity: 1;
+    opacity: 0;
     filter: blur(5px);
     transform: translateX(-200%);
-    transition: all 1.4s;
+    transition: all 1s;
 }
 
 .show {
