@@ -20,6 +20,9 @@ if (hiddenElements.length > 0) {
 hiddenElements.forEach((element) => observer.observe(element));
 
 
+///////////////
+
+
 window.addEventListener('load', () => {
     const initialElements = document.querySelectorAll('.initial');
     //const initialElements = document.getElementById('initial');
@@ -32,10 +35,7 @@ window.addEventListener('load', () => {
     
 });
 
-///////////////
-
-
-// Add confetti.js CDN in script
+// Confetti.js CDN in script (Animation)
 const script = document.createElement("script");
 script.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
 document.head.appendChild(script);
