@@ -146,8 +146,8 @@ img.point-down  {
 
 .surprise {
     display: grid;
-    grid-template-columns: 1fr 11rem 1fr;
-    grid-template-rows: 6rem 11rem 6rem;
+    grid-template-columns: 1fr 9rem 1fr;
+    grid-template-rows: 6rem 9rem 6rem;
     place-items: center;
 }
 
@@ -156,8 +156,8 @@ img.point-down  {
 }
 
 .surprise .circle-portrait {
-    width: 14rem;
-    height: 14rem;
+    width: 12rem;
+    height: 12rem;
     background-color: white;
     background-size: contain;
     background-position: center;
