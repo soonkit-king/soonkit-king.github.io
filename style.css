@@ -35,7 +35,7 @@
 
 html, body {
     font-family: "main-font";
-    background-color: rgb(205, 205, 205);
+    background-color: #c2c1c0;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -56,6 +56,24 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    font-size: 1.8rem;
+    margin: 0px;
+    text-align: center;
+    display: inline;
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin: 0px;
+    text-align: center;
+}
+
+u {
+    display: inline !important;
+}
+
 body .safe-area {
     position: relative;
     background-color: white;
@@ -68,7 +86,7 @@ body .safe-area {
 
 section {
     min-height: 100vh;
-    background-color:antiquewhite;
+    background-color:#faebd7;
     color: black;
 }
 
@@ -106,6 +124,14 @@ img.point-down  {
     margin: 110px auto 0 auto;
     background-position: center;
 }
+
+
+
+.apology {
+    background-color: #b0c4de;
+    /* background-color: #d7fff3; */
+}
+
 
 
 /* Transitions */
@@ -152,7 +178,7 @@ img.point-down  {
 }
 
 .surprise:nth-child(1) {
-    background-color: antiquewhite;
+    background-color: #faebd7;
 }
 
 .surprise .circle-portrait {
