@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach((entry) => {
                 if(entry.isIntersecting){
                     launchConfetti();
-                    //observer.unobserve(surpriseSection);
+                    observer.unobserve(surpriseSection);
                 }
             } 
             );
