@@ -67,7 +67,7 @@ p {
     font-size: 1.5rem;
     font-weight: 300;
     margin: 0px;
-    text-align: center;
+    text-align: left;
 }
 
 u {
@@ -126,7 +126,7 @@ img.point-down  {
 }
 
 
-
+/* Apology */
 .apology {
     background-color: #b0c4de;
     /* background-color: #d7fff3; */
@@ -134,7 +134,10 @@ img.point-down  {
 
 
 
-/* Transitions */
+
+
+
+/* GENERAL Transitions */
 .hidden {
     opacity: 0;
     transition: all 1.5s;
