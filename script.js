@@ -1,41 +1,40 @@
+// Observes intersection between element and the viewport. Meaning when exit or enters. 
+// the observer does the job
+///////////////
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         console.log(entry)
         if(entry.isIntersecting) {
             entry.target.classList.add('show');
-        } else {
+        }
+        else {
             entry.target.classList.remove('show');
         }
     })
-}
-)
-
+});
 const hiddenElements = document.querySelectorAll('.hidden, .hidden.fromLeft');
-if (hiddenElements.length > 0) {
-    console.log(`Found ${hiddenElements.length} elements.`);
-    console.log(hiddenElements); // Log the NodeList to inspect the elements
-} else {
-    console.log('No elements found.');
-}
 hiddenElements.forEach((element) => observer.observe(element));
 
 
+
+// Removes "initial" class after transitioned once (removes initial delay)
 ///////////////
-
-
 window.addEventListener('load', () => {
     const initialElements = document.querySelectorAll('.initial');
     //const initialElements = document.getElementById('initial');
     
-    initialElements.addEventListener('transitionend', () => {
-        if (element.classList.contains('initial')) {
-            element.classList.remove('initial');
-        }
-    })
-    
+    initialElements.forEach((element) =>
+        element.addEventListener('transitionend', () => {
+            if (element.classList.contains('initial')) {
+                element.classList.remove('initial');
+            }
+        })
+    );
 });
 
+
 // Confetti.js CDN in script (Animation)
+///////////////
 const script = document.createElement("script");
 script.src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js";
 document.head.appendChild(script);
