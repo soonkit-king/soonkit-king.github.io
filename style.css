@@ -47,20 +47,22 @@ html, body {
 h1 {
     font-size: 2.5rem;
     margin: 0px;
+    display: block;
     text-align: center;
 }
 
 h2 {
     font-size: 2rem;
     margin: 0px;
+    display: block;
     text-align: center;
 }
 
 h3 {
     font-size: 1.8rem;
     margin: 0px;
-    text-align: center;
     display: inline;
+    text-align: left;
 }
 
 p {
@@ -102,8 +104,9 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    align-items: start !important;
+    justify-content: start !important;
+    text-align: left !important;
     margin: 0 40px;
 }
 
@@ -111,8 +114,9 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
     margin: 0 40px;
 }
 
@@ -134,8 +138,10 @@ img.point-down  {
     /* background-color: #d7fff3; */
 }
 
-.melancholy.wishing.textbox-left {
+.textbox-left.wishing {
     background-color: #f5b4bd;
+    padding: 4rem 3rem;
+    border-radius: 40px;
 }
 
 .apology {
@@ -144,12 +150,12 @@ img.point-down  {
 }
 
 .compliment {
-    background-color: #f5b4bd;
+    background-color: #fff2a5;
     /* background-color: #d7fff3; */
 }
 
 .disclosure {
-    background-color: #2d0f5e;
+    background-color: rgb(34, 34, 34);
     color: white;
 }
 
@@ -175,7 +181,7 @@ img.point-down  {
 }
 
 .hidden.fromLeft {
-    opacity: 0;
+    opacity: 0; 
     filter: blur(5px);
     transform: translateX(-110%);
     transition: all 1.2s;
@@ -257,49 +263,4 @@ img.emoji {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.launcher {
-    position: relative;
-    background-color: wheat;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-}
-
-.launcher .upper-half {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 70vh;
-    background-color: burlywood;
-    animation: rop 4s .5s;
-
-    display: flex;
-    align-items: start;
-    justify-content: center;
-}
-
-
-.launcher .lower-half {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 0;
-    background-color: brown;
-    animation: rise 4s .5s;
 }
