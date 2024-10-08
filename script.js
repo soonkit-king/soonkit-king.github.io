@@ -1,6 +1,13 @@
 // Observes intersection between element and the viewport. Meaning when exit or enters. 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
+        if( entry.target.classList.contains('hidden fromLeft')) {
+            console.log('FromLeft is here');
+        }
+        else {
+            console.log('FromLeft is here');
+        }
+
         if(entry.isIntersecting) {
             entry.target.classList.add('show');
         }
