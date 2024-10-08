@@ -125,10 +125,41 @@ img.point-down  {
     background-position: center;
 }
 
+.inception {
+    background-color: antiquewhite;
+}
 
-/* Apology */
-.apology {
+.melancholy {
     background-color: #b0c4de;
+    /* background-color: #d7fff3; */
+}
+
+.melancholy.wishing.textbox-left {
+    background-color: #f5b4bd;
+}
+
+.apology {
+    background-color: #f5b4bd;
+    /* background-color: #d7fff3; */
+}
+
+.compliment {
+    background-color: #f5b4bd;
+    /* background-color: #d7fff3; */
+}
+
+.disclosure {
+    background-color: #2d0f5e;
+    color: white;
+}
+
+.reminiscence {
+    background-color: #b2ffe9;
+    /* background-color: #d7fff3; */
+}
+
+.farewell {
+    background-color: antiquewhite;
     /* background-color: #d7fff3; */
 }
 
@@ -151,19 +182,19 @@ img.point-down  {
 }
 
 .hidden.initial:nth-child(1) {
-    transition-delay: .5s;
+    transition-delay: 1s;
 }
 
 .hidden.initial:nth-child(2) {
-    transition-delay: 1.8s;
-}
-
-.hidden.initial:nth-child(3) {
     transition-delay: 3s;
 }
 
+.hidden.initial:nth-child(3) {
+    transition-delay: 4s;
+}
+
 .hidden.initial:nth-child(4) {
-    transition-delay: 3.7s;
+    transition-delay: 4.4s;
 }
 
 .show {
