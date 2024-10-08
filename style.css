@@ -3,32 +3,6 @@
     src: url("fonts/AfacadFlux-VariableFont_slnt\,wght.ttf");
 }
 
-@keyframes drop {
-    0% {height: 0;}
-    10% {height: 80vh;}
-    40% {height: 80vh;}
-    50% {height: 80vh;}
-    65% {height: 0;}
-}
-
-@keyframes bounce {
-    0% {top: 0;}
-    10% {top: 5vh;}
-    40% {top: 2vh;}
-    50% {top: 5vh;}
-    65% {top: -30vh;}
-}
-
-@keyframes rise {
-    0% {height: 0vh;}
-    10% {height: 40vh;}
-    20% {height: 25vh;}
-    50% {height: 40vh;}
-    65% {height: 0vh; }
-}
-
-
-
 :root {
     --safe-width: 40rem;
 }
@@ -133,6 +107,12 @@ blockquote {
     margin: 0 40px;
 }
 
+
+/* Inception with Surprise */
+.inception {
+    background-color: antiquewhite;
+}
+
 img.point-down  {
     position: relative;
     width: 110px;   /* Sets the width of the image */
@@ -140,86 +120,6 @@ img.point-down  {
     max-width: 100%;
     margin: 110px auto 0 auto;
     background-position: center;
-}
-
-.inception {
-    background-color: antiquewhite;
-}
-
-.melancholy {
-    background-color: #b0c4de;
-    /* background-color: #d7fff3; */
-}
-
-.textbox-left.wishing {
-    background-color: #f5b4bd;
-    padding: 4rem 3rem;
-    border-radius: 40px;
-}
-
-.apology {
-    background-color: #f5b4bd;
-    /* background-color: #d7fff3; */
-}
-
-.compliment {
-    background-color: #fff2a5;
-    /* background-color: #d7fff3; */
-}
-
-.disclosure {
-    background-color: rgb(34, 34, 34);
-    color: white;
-}
-
-.reminiscence {
-    background-color: #b2ffe9;
-    /* background-color: #d7fff3; */
-}
-
-.farewell {
-    background-color: antiquewhite;
-    /* background-color: #d7fff3; */
-}
-
-
-
-
-
-
-/* GENERAL Transitions */
-.hidden {
-    opacity: 0;
-    transition: all 1.5s;
-}
-
-.hidden.fromLeft {
-    opacity: 0; 
-    filter: blur(5px);
-    transform: translateX(-110%);
-    transition: all 1.2s;
-}
-
-.hidden.initial:nth-child(1) {
-    transition-delay: 1s;
-}
-
-.hidden.initial:nth-child(2) {
-    transition-delay: 3s;
-}
-
-.hidden.initial:nth-child(3) {
-    transition-delay: 4s;
-}
-
-.hidden.initial:nth-child(4) {
-    transition-delay: 4.4s;
-}
-
-.show {
-    opacity: 1 !important;
-    filter: blur(0) !important;
-    transform: translateX(0) !important;
 }
 
 
@@ -268,7 +168,6 @@ img.emoji {
     outline: none;
 }
 
-/* Canvas for confetti animation */
 #confettiCanvas {
     position: absolute;
     top: 0;
@@ -276,4 +175,95 @@ img.emoji {
     width: 100vw;
     height: 100vh;
     pointer-events: none;
+}
+
+
+/* Melancholy */
+.melancholy {
+    background-color: #b0c4de;
+}
+
+.melancholy .textbox-left.wishing {
+    background-color: #f5b4bd;
+    padding: 4rem 3rem;
+    border-radius: 40px;
+}
+
+
+/* Apology */
+.apology {
+    background-color: #f5b4bd;
+}
+
+
+/* Apology */
+.compliment {
+    background-color: #fff2a5;
+}
+
+
+/* Disclosure */
+.disclosure {
+    background-color: rgb(34, 34, 34);
+    color: white;
+}
+
+
+/* Reminiscence */
+.reminiscence {
+    background-color: #b2ffe9;
+}
+
+.portrait {
+    height: 60rem;
+    width: 43rem;
+    border-radius: 30px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+
+
+/* Farewell */
+.farewell {
+    background-color: antiquewhite;
+}
+
+
+
+/* GENERAL HIDDEN TRANSITIONS */
+.hidden {
+    opacity: 0;
+    transition: all 1.5s;
+}
+
+.hidden.fromLeft {
+    opacity: 0; 
+    filter: blur(5px);
+    transform: translateX(-110%);
+    transition: all 1.2s;
+}
+
+.hidden.initial:nth-child(1) {
+    transition-delay: 1s;
+}
+
+.hidden.initial:nth-child(2) {
+    transition-delay: 3s;
+}
+
+.hidden.initial:nth-child(3) {
+    transition-delay: 4s;
+}
+
+.hidden.initial:nth-child(4) {
+    transition-delay: 4.4s;
+}
+
+.show {
+    opacity: 1 !important;
+    filter: blur(0) !important;
+    transform: translateX(0) !important;
 }
