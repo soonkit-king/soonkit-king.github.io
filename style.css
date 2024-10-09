@@ -22,7 +22,7 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
-    background-color: #faebd7;
+    background-color: #fce7cb;
     color: black;
     width: 100%; /* Use full width on mobile */
     max-width: 390px; /* Limit width to 390px */
@@ -80,6 +80,10 @@ u {
     display: inline;
 }
 
+br {
+    height: 2px;
+}
+
 /* Area tags */
 section {
     min-height: 100vh;
@@ -122,7 +126,7 @@ blockquote {
 
 /* Coloring  by Breakpoints*/
 .bg-inception{
-    background-color: #faebd7;
+    background-color: #fce7cb;
 }
 
 .bg-melancholy{
@@ -139,7 +143,7 @@ blockquote {
 }
 
 .bg-reminiscence{
-    background-color: #b2ffe9;
+    background-color: #7bcab4;
 }
 
 .bg-farewell {
@@ -228,14 +232,43 @@ blockquote {
 }
 
 
-.reminiscence .portrait {
-    height: 60rem;
-    width: 43rem;
-    border-radius: 30px;
+.disclosure .narcissist{
+    text-align: center; 
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); 
+    color:transparent; 
+    -webkit-background-clip: text;
+}
+
+.disclosure .dialog {
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+}
+
+.reminiscence .screenshot {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
     background-color: white;
     background-size: cover;
     background-position: center;
     overflow: hidden;
+    box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.5);
+    margin: 2rem 0;
+}
+
+.reminiscence .surprise .circle-portrait {
+    width: 12rem;
+    height: 12rem;
+    background-color: white;
+    background-size: contain;
+    background-position: center;
+    border: 1px solid rgb(141, 141, 141);
+    border-radius: 50%;
+    overflow: hidden;
+    object-fit: cover;
+    box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* GENERAL HIDDEN TRANSITIONS */
