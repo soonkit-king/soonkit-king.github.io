@@ -3,20 +3,17 @@
     src: url("fonts/AfacadFlux-VariableFont_slnt\,wght.ttf");
 }
 
-html, body {
+body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     width: 100%;
+    height: -webkit-fill-available;
     background-color: #c2c1c0;
     font-family: "main-font";
     line-height: 3rem;
     box-sizing: border-box; /* Includes padding and border in width/height */
-}
-
-body {
-    height: -webkit-fill-available; /* Ensure it uses available height on iOS Safari */
 }
 
 .safe-area {
