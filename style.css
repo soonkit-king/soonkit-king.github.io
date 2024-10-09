@@ -6,33 +6,35 @@
 html, body {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Ensures vertical centering */
     width: 100%;
     height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     background-color: #c2c1c0;
     font-family: "main-font";
     line-height: 3rem;
-    box-sizing: border-box; /* Includes padding and border in width/height */
+    box-sizing: border-box; /* Include padding in width/height */
 }
 
 body {
-    height: -webkit-fill-available; /* Ensure it uses available height on iOS Safari */
+    height: -webkit-fill-available; /* Ensures the body uses available height in iOS Safari */
 }
 
 .safe-area {
-    position: relative;
     background-color: white;
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Use full width on mobile */
-    max-width: 390px; /* Limit width to 390px */
-    min-height: 100vh; /* Ensure safe-area fills viewport height */
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 390px; /* Restrict to a maximum width */
+    height: 100%; /* Ensure it takes full height */
+    max-height: 100vh; /* Make sure it doesn't overflow beyond the viewport */
+    box-sizing: border-box; /* Include padding in width/height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Optional padding */
 }
-/* Text tags */
 
+/* Text tags */
 h1 {
     font-size: 2.5rem;
     margin: 0px;
