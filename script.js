@@ -1,50 +1,15 @@
-// Observes intersection between element and the viewport. Meaning when exit or enters. 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if( entry.target.classList.contains('hidden fromLeft')) {
-            console.log('FromLeft is here');
-        }
-        else {
-            console.log('FromLeft is here');
-        }
+const script = document.createElement("script"); // Create a new script tag (only exist in cache)
+script.src = "/other/confetti.browser.min.js"; // Assiging the script source
+document.head.appendChild(script); // Finally adding the script to the DOM (Document Object Model)
 
-        if(entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-        else {
-            entry.target.classList.remove('show');
-        }
-    })
-});
-const hiddenElements = document.querySelectorAll('.hidden, .hidden.fromLeft');
-hiddenElements.forEach((element) => observer.observe(element));
-
-
-
-// Removes "initial" class after transitioned once (removes initial delay)
-window.addEventListener('load', () => {
-    const initialElements = document.querySelectorAll('.initial');
-
-    initialElements.forEach((element) =>
-        element.addEventListener('transitionend', () => {
-            element.classList.remove('initial');
-        })
-    );
-});
-
-
-// Confetti.js CDN in script (Animation)
-const script = document.createElement("script");
-script.src = "/other/confetti.browser.min.js";
-document.head.appendChild(script);
 
 document.addEventListener('DOMContentLoaded', () => {
     const audio = new Audio('/audio/party-horn.mp3');
     audio.preload = 'auto';
     audio.load();
 
-    // Wait for the confetti library to load
-    script.onload = () => {
+    // Surprise confetti section
+    script.onload = () => { 
         const launchConfetti = () => {
             confetti({
                 particleCount: 150,
@@ -52,29 +17,67 @@ document.addEventListener('DOMContentLoaded', () => {
                 origin: { y: 0.6 }
             });
             
-            if (!audio.paused) { // Can react to button spams
+            if (!audio.paused) { // Audio can react to button spams
                 audio.currentTime = 0;
             }
             console.log("Audio is playing")
-            audio.play().catch(error => {
+            audio.play().catch(error => { // Party horn sound effect
                 console.log("Audio playback blocked until user interacts with the document.");
-            }); // Playing a party horn sound effect
+            }); 
         };
 
-        // Observing the intersection between viewport and "surprise" class for confetti animation
+        // Add confetti animation function to button
+        document.getElementById('confettiButton').addEventListener('click', launchConfetti);
+
+        // Add interaction observer between viewport and "surprise" class for confetti animation
         const surpriseSection = document.querySelector('.surprise');
-        const observer = new IntersectionObserver((entries) => {
+        const surpriseObserver = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if(entry.isIntersecting){
                     launchConfetti();
-                    observer.unobserve(surpriseSection);
+                    surpriseObserver.unobserve(surpriseSection);
                 }
             } 
             );
         });
-        observer.observe(surpriseSection);
+        surpriseObserver.observe(surpriseSection);
+    }
 
-        // Attach event listener to the button
-        document.getElementById('confettiButton').addEventListener('click', launchConfetti);
+    // Observes intersection between element and the viewport. Meaning when exit or enters. 
+    const hiddenElements = document.querySelectorAll('.hidden, .hidden.fromLeft');
+    const hiddenObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+            else {
+                entry.target.classList.remove('show');
+            }
+        })
+    });
+    hiddenElements.forEach((el) => hiddenObserver.observe(el));
 
-}});
+    // Removes "initial" class after transitioned once (removes initial delay)
+    const initialElements = document.querySelectorAll('.initial');
+    initialElements.forEach((el) =>
+        el.addEventListener('transitionend', () => {
+            el.classList.remove('initial');
+        })
+    );
+
+    // Section highlight background color changes through scrolling
+    const hightlightElements = document.querySelectorAll('.hightlight');
+    const hightlightObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if(entry.isIntersecting) {
+
+            }
+        })
+    });
+    hightlightElements.forEach((el) => hightlightObserver.observe(el));
+});
+
+
+
+
+
