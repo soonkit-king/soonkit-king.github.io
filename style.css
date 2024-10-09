@@ -93,6 +93,13 @@ section {
     flex-direction: column;
 }
 
+blockquote {
+    min-height: 50vh;
+    width: 100%;
+    color: black;
+    margin: 0;
+}
+
 .center {
     display: flex;
     align-items: center;
@@ -100,11 +107,6 @@ section {
     flex-direction: column;
 }
 
-blockquote {
-    min-height: 50vh;
-    color: black;
-    margin: 0;
-}
 
 .textbox-left {
     position: relative;
@@ -246,7 +248,7 @@ blockquote {
     border-bottom: 1px white solid;
 }
 
-.reminiscence .screenshot {
+.screenshot {
     position: relative;
     width: 100%;
     border-radius: 10px;
@@ -255,21 +257,50 @@ blockquote {
     background-position: center;
     overflow: hidden;
     box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.5);
-    margin: 2rem 0;
+    margin: 4rem 0;
 }
 
-.reminiscence .surprise .circle-portrait {
-    width: 12rem;
-    height: 12rem;
+.screenshot.search {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.1);
+    margin: 4rem 0;
+}
+
+.reminiscence .potato {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr; 
+    gap: 10px; 
+    max-width: 100%;
+}
+
+.potato {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates 2 equal columns */
+    gap: 1rem; /* Adds space between the columns (optional) */
+    justify-items: center; /* Centers the images horizontally */
+    align-items: center; /* Centers the images vertically */
+}
+
+.pfp {
+    height: auto;
+    width: 100%;
+    max-width: 10rem;
     background-color: white;
     background-size: contain;
     background-position: center;
     border: 1px solid rgb(141, 141, 141);
-    border-radius: 50%;
-    overflow: hidden;
+    border-radius: 5px;
     object-fit: cover;
     box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.5);
 }
+
 
 /* GENERAL HIDDEN TRANSITIONS */
 .hidden {
@@ -287,6 +318,13 @@ blockquote {
     opacity: 0; 
     filter: blur(10px);
     transform: translateX(-50%);
+    transition: all 1.2s;
+}
+
+.hidden.fromRight {
+    opacity: 0; 
+    filter: blur(10px);
+    transform: translateX(50%);
     transition: all 1.2s;
 }
 
