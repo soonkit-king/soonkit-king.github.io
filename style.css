@@ -9,6 +9,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: -webkit-fill-available;
     background-color: #3e3e3e;
     font-family: "main-font";
@@ -17,16 +18,17 @@ body {
     overflow-x: hidden;
 }
 
-body .safe-area {
-    position: relative;
-    background-color: antiquewhite;
+.safe-area {
     margin: 0;
     padding: 0;
+    position: relative;
+    background-color: #faebd7;
+    color: black;
     width: 100%; /* Use full width on mobile */
     max-width: 390px; /* Limit width to 390px */
     min-height: 100vh; /* Ensure safe-area fills viewport height */
     box-sizing: border-box;
-    transition: background-color 1s ease-in-out !important;
+    transition: all 1s ease;
 }
 
 /* Text tags */
@@ -81,7 +83,6 @@ u {
 /* Area tags */
 section {
     min-height: 100vh;
-    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -120,32 +121,28 @@ blockquote {
 }
 
 /* Coloring  by Breakpoints*/
-.bg-color-inception{
+.bg-inception{
     background-color: #faebd7;
 }
 
-.bg-color-melancholy{
+.bg-melancholy{
     background-color: #cde2ff;
 }
 
-.bg-color-apology{
+.bg-apology {
     background-color: #ffe1ba;
 }
 
-.bg-color-compliments{
-    background-color: #fff2a5;
-}
-
-.bg-color-disclosure{
-    background-color: #222222;
+.bg-disclosure{
     color: white;
+    background-color: #222222;
 }
 
-.bg-color-reminiscence{
+.bg-reminiscence{
     background-color: #b2ffe9;
 }
 
-.bg-color-farewell {
+.bg-farewell {
     background-color: antiquewhite;
 }
 
@@ -218,6 +215,7 @@ blockquote {
 .melancholy .textbox-left.wishing {
     background-color: #ffe1ba;
     padding: 2rem 3rem;
+    margin-bottom: 9rem;
     border-radius: 40px;
 }
 

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Observes intersection between element and the viewport. Meaning when exit or enters. 
-    const hiddenElements = document.querySelectorAll('.hidden, .hidden.fromLeft');
+    const hiddenElements = document.querySelectorAll('.hidden');
     const hiddenObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if(entry.isIntersecting) {
@@ -61,26 +61,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialElements = document.querySelectorAll('.initial');
     initialElements.forEach((el) =>
         el.addEventListener('transitionend', () => {
-            el.classList.remove('initial');
+            el.classList.remove('initial', 'hidden');
         })
     );
 
-    // Section highlight background color changes through scrolling
+    // Section breakpoint color changes through scrolling
     const breakpointSection = document.querySelectorAll('.breakpoint');
-    const breakpointObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => { 
-            if(entry.isIntersecting) {
-                const bgClass = entry.target.getAttribute('data-bg-class');
-                document.querySelector('.safe-area').className = `safe-area ${bgClass}`;
-                console.log(`safe-area ${bgClass}`);
-                 
-                // const bgColor = entry.target.getAttribute('data-bg-color');
-                // document.querySelector('.safe-area').style.backgroundColor = bgColor;
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bgColor = entry.target.getAttribute('bg-color');
+                //document.body.style.backgroundColor = color;
+                // document.body.className = bgColor;
+                const safeArea = document.querySelector('.safe-area');
+                safeArea.className = `safe-area ${bgColor}`
 
+                console.log(`Breakpoint has intersected with safe-area ${bgColor}`);
             }
-        })
-    }, { threshold: 0.5 });
-    breakpointSection.forEach((el) => breakpointObserver.observe(el));
+        });
+    }, { threshold: 0.2 });  // Change color on percentage scrolled through
+    breakpointSection.forEach(section => { observer.observe(section); });
 });
 
 
