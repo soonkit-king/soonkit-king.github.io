@@ -301,6 +301,38 @@ blockquote {
     box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.5);
 }
 
+.collage {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 2px;
+    max-width: 100%; /* Ensures it fits inside the .textbox-mid */
+}
+
+.collage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Keeps the portrait aspect ratio */
+    max-height: 300px; /* To ensure images remain portrait */
+    background-color: burlywood;
+}
+
+.collage img:nth-child(1) {
+    border-top-left-radius: 20px;
+}
+
+.collage img:nth-child(2) {
+    border-top-right-radius: 20px;
+}
+
+.collage img:nth-child(5) {
+    border-bottom-left-radius: 20px;
+}
+
+.collage img:nth-child(6) {
+    border-bottom-right-radius: 20px;
+}
+
 
 /* GENERAL HIDDEN TRANSITIONS */
 .hidden {
