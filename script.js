@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } 
             );
-        });
+        }, { threshold: 0.3 });
         surpriseObserver.observe(surpriseSection);
     }
 
@@ -66,15 +66,21 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     // Section highlight background color changes through scrolling
-    const hightlightElements = document.querySelectorAll('.hightlight');
-    const hightlightObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
+    const breakpointSection = document.querySelectorAll('.breakpoint');
+    const breakpointObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => { 
             if(entry.isIntersecting) {
+                const bgClass = entry.target.getAttribute('data-bg-class');
+                document.querySelector('.safe-area').className = `safe-area ${bgClass}`;
+                console.log(`safe-area ${bgClass}`);
+                 
+                // const bgColor = entry.target.getAttribute('data-bg-color');
+                // document.querySelector('.safe-area').style.backgroundColor = bgColor;
 
             }
         })
-    });
-    hightlightElements.forEach((el) => hightlightObserver.observe(el));
+    }, { threshold: 0.5 });
+    breakpointSection.forEach((el) => breakpointObserver.observe(el));
 });
 
 

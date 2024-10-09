@@ -3,28 +3,30 @@
     src: url("fonts/AfacadFlux-VariableFont_slnt\,wght.ttf");
 }
 
+/* Super area tags */
 body {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    width: 100%;
     height: -webkit-fill-available;
-    background-color: #c2c1c0;
+    background-color: #3e3e3e;
     font-family: "main-font";
     line-height: 3rem;
     box-sizing: border-box; /* Includes padding and border in width/height */
+    overflow-x: hidden;
 }
 
-.safe-area {
+body .safe-area {
     position: relative;
-    background-color: white;
+    background-color: antiquewhite;
     margin: 0;
     padding: 0;
     width: 100%; /* Use full width on mobile */
     max-width: 390px; /* Limit width to 390px */
     min-height: 100vh; /* Ensure safe-area fills viewport height */
     box-sizing: border-box;
+    transition: background-color 1s ease-in-out !important;
 }
 
 /* Text tags */
@@ -76,19 +78,14 @@ u {
     display: inline;
 }
 
-/*  */
-
+/* Area tags */
 section {
     min-height: 100vh;
-    background-color:#faebd7;
     color: black;
-}
-
-blockquote {
-    min-height: 50vh;
-    background-color:#faebd7;
-    color: black;
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .center {
@@ -96,6 +93,12 @@ blockquote {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+blockquote {
+    min-height: 50vh;
+    color: black;
+    margin: 0;
 }
 
 .textbox-left {
@@ -116,13 +119,41 @@ blockquote {
     margin: 0 40px;
 }
 
+/* Coloring  by Breakpoints*/
+.bg-color-inception{
+    background-color: #faebd7;
+}
 
-/* Inception with Surprise */
-.inception {
+.bg-color-melancholy{
+    background-color: #cde2ff;
+}
+
+.bg-color-apology{
+    background-color: #ffe1ba;
+}
+
+.bg-color-compliments{
+    background-color: #fff2a5;
+}
+
+.bg-color-disclosure{
+    background-color: #222222;
+    color: white;
+}
+
+.bg-color-reminiscence{
+    background-color: #b2ffe9;
+}
+
+.bg-color-farewell {
     background-color: antiquewhite;
 }
 
-img.point-down  {
+
+
+
+/* Inception with Surprise */
+.inception img.point-down  {
     position: relative;
     width: 110px;   /* Sets the width of the image */
     height: auto;   /* Keeps the aspect ratio */
@@ -132,18 +163,14 @@ img.point-down  {
 }
 
 
-.surprise {
+.inception .surprise {
     display: grid;
     grid-template-columns: 1fr 9rem 1fr;
     grid-template-rows: 6rem 9rem 6rem;
     place-items: center;
 }
 
-.surprise:nth-child(1) {
-    background-color: #faebd7;
-}
-
-.surprise .circle-portrait {
+.inception .surprise .circle-portrait {
     width: 12rem;
     height: 12rem;
     background-color: white;
@@ -156,13 +183,13 @@ img.point-down  {
     box-shadow: 6px 9px 15px rgba(0, 0, 0, 0.5);
 }
 
-img.emoji {
+.inception img.emoji {
     width: 5em;
     height: 5em;
     margin: 0;
 }
 
-.confetti-btn {
+.inception .confetti-btn {
     background-color: pink;
     color: black;
     padding: 15px 30px;
@@ -177,7 +204,7 @@ img.emoji {
     outline: none;
 }
 
-#confettiCanvas {
+.inception #confettiCanvas {
     position: absolute;
     top: 0;
     left: 0;
@@ -188,12 +215,8 @@ img.emoji {
 
 
 /* Melancholy */
-.melancholy {
-    background-color: #cde2ff;
-}
-
 .melancholy .textbox-left.wishing {
-    background-color: #ffc9d0;
+    background-color: #ffe1ba;
     padding: 2rem 3rem;
     border-radius: 40px;
 }
@@ -207,31 +230,7 @@ img.emoji {
 }
 
 
-/* Apology */
-.apology {
-    background-color: #f5b4bd;
-}
-
-
-/* Apology */
-.compliment {
-    background-color: #fff2a5;
-}
-
-
-/* Disclosure */
-.disclosure {
-    background-color: rgb(34, 34, 34);
-    color: white;
-}
-
-
-/* Reminiscence */
-.reminiscence {
-    background-color: #b2ffe9;
-}
-
-.portrait {
+.reminiscence .portrait {
     height: 60rem;
     width: 43rem;
     border-radius: 30px;
@@ -241,24 +240,21 @@ img.emoji {
     overflow: hidden;
 }
 
-
-
-/* Farewell */
-.farewell {
-    background-color: antiquewhite;
-}
-
-
-
 /* GENERAL HIDDEN TRANSITIONS */
 .hidden {
     opacity: 0;
     transition: all 1.5s;
 }
 
-.hidden.fromLeft {
+.hidden.blur {
     opacity: 0; 
     filter: blur(5px);
+    transition: all 1.2s;
+}
+
+.hidden.fromLeft {
+    opacity: 0; 
+    filter: blur(10px);
     transform: translateX(-50%);
     transition: all 1.2s;
 }
